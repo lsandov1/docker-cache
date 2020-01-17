@@ -1,7 +1,7 @@
 docker rmi sameprolog-vim | true
 docker rmi sameprolog-emacs | true
-echo Building emacs 
-Building emacs
+Building emacs 
+
 m4 -I templates dockerfile.emacs.m4 | tee Dockerfile.emacs | docker build -t sameprolog-emacs -
 Sending build context to Docker daemon  2.048kB
 
@@ -14,7 +14,7 @@ Step 2/5 : RUN swupd update &&     swupd bundle-add c-basic strace
 Step 3/5 : FROM clearlinux:latest
  ---> 9a17e4f72fc4
 Step 4/5 : RUN swupd bundle-add emacs
- ---> Running in f0272a2487e1
+ ---> Running in 985996d3dd4b
 Loading required manifests...
 Downloading packs (37.79 MB) for:
  - emacs
@@ -225,18 +225,18 @@ Installing bundle(s) files...
 	...100%
 Calling post-update helper scripts
 Successfully installed 1 bundle
-Removing intermediate container f0272a2487e1
- ---> a3d9e23b9309
+Removing intermediate container 985996d3dd4b
+ ---> 34868fb7e23c
 Step 5/5 : CMD ["/bin/bash"]
- ---> Running in 3ce7373757ea
-Removing intermediate container 3ce7373757ea
- ---> bf276cdaad76
-Successfully built bf276cdaad76
+ ---> Running in eccd0797bd05
+Removing intermediate container eccd0797bd05
+ ---> 2afad3dc165e
+Successfully built 2afad3dc165e
 Successfully tagged sameprolog-emacs:latest
-echo Finished emacs 
-Finished emacs
-echo Building vim 
-Building vim
+Finished emacs 
+
+Building vim 
+
 m4 -I templates dockerfile.vim.m4 | tee Dockerfile.vim | docker build -t sameprolog-vim -
 Sending build context to Docker daemon  2.048kB
 
@@ -249,7 +249,7 @@ Step 2/5 : RUN swupd update &&     swupd bundle-add c-basic strace
 Step 3/5 : FROM clearlinux:latest
  ---> 9a17e4f72fc4
 Step 4/5 : RUN swupd bundle-add vim
- ---> Running in e55925e80e02
+ ---> Running in 7c1e50c322c9
 Loading required manifests...
 Downloading packs (61.62 MB) for:
  - python3-basic
@@ -463,13 +463,13 @@ Installing bundle(s) files...
 	...100%
 Calling post-update helper scripts
 Successfully installed 1 bundle
-Removing intermediate container e55925e80e02
- ---> f6a5cbff42d1
+Removing intermediate container 7c1e50c322c9
+ ---> 630558974cfa
 Step 5/5 : CMD ["/bin/bash"]
- ---> Running in 3a86615fca39
-Removing intermediate container 3a86615fca39
- ---> bb5afba08ef9
-Successfully built bb5afba08ef9
+ ---> Running in 6d7f0d118e70
+Removing intermediate container 6d7f0d118e70
+ ---> 691c20270967
+Successfully built 691c20270967
 Successfully tagged sameprolog-vim:latest
-echo Finished vim 
-Finished vim
+Finished vim 
+

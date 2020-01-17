@@ -4,14 +4,14 @@ all: editors
 editors: vim
 
 vim: emacs
-	echo Building $@ $(time)
+	@printf "Building $@ \n\n"
 	m4 -I templates dockerfile.$@.m4 | tee Dockerfile.$@ | docker build -t sameprolog-$@ -
-	echo Finished $@ $(time)
+	@printf "Finished $@ \n\n"
 
 emacs: cleanup
-	echo Building $@ $(time)
+	@printf "Building $@ \n\n"
 	m4 -I templates dockerfile.$@.m4 | tee Dockerfile.$@ | docker build -t sameprolog-$@ -
-	echo Finished $@ $(time)
+	@printf "Finished $@ \n\n"
 
 cleanup:
 	docker rmi sameprolog-vim | true
