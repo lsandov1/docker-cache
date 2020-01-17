@@ -5,12 +5,12 @@ editors: vim
 
 vim: emacs
 	echo Building $@ $(time)
-	m4 -I templates dockerfile.$@.m4 | tee | docker build -t sameprolog-$@ -
+	m4 -I templates dockerfile.$@.m4 | tee Dockerfile.$@ | docker build -t sameprolog-$@ -
 	echo Finished $@ $(time)
 
 emacs: cleanup
 	echo Building $@ $(time)
-	m4 -I templates dockerfile.$@.m4 | tee | docker build -t sameprolog-$@ -
+	m4 -I templates dockerfile.$@.m4 | tee Dockerfile.$@ | docker build -t sameprolog-$@ -
 	echo Finished $@ $(time)
 
 cleanup:

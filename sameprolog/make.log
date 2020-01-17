@@ -1,0 +1,475 @@
+docker rmi sameprolog-vim | true
+docker rmi sameprolog-emacs | true
+echo Building emacs 
+Building emacs
+m4 -I templates dockerfile.emacs.m4 | tee Dockerfile.emacs | docker build -t sameprolog-emacs -
+Sending build context to Docker daemon  2.048kB
+
+
+Step 1/5 : FROM clearlinux:latest
+ ---> 9a17e4f72fc4
+Step 2/5 : RUN swupd update &&     swupd bundle-add c-basic strace
+ ---> Using cache
+ ---> d85b195809a3
+Step 3/5 : FROM clearlinux:latest
+ ---> 9a17e4f72fc4
+Step 4/5 : RUN swupd bundle-add emacs
+ ---> Running in f0272a2487e1
+Loading required manifests...
+Downloading packs (37.79 MB) for:
+ - emacs
+	...0%
+	...1%
+	...2%
+	...3%
+	...4%
+	...5%
+	...6%
+	...7%
+	...8%
+	...9%
+	...10%
+	...11%
+	...12%
+	...13%
+	...14%
+	...15%
+	...16%
+	...17%
+	...18%
+	...19%
+	...20%
+	...21%
+	...22%
+	...23%
+	...24%
+	...25%
+	...26%
+	...27%
+	...28%
+	...29%
+	...30%
+	...31%
+	...32%
+	...33%
+	...34%
+	...35%
+	...36%
+	...37%
+	...38%
+	...39%
+	...40%
+	...41%
+	...42%
+	...43%
+	...44%
+	...45%
+	...46%
+	...47%
+	...48%
+	...49%
+	...50%
+	...51%
+	...52%
+	...53%
+	...54%
+	...55%
+	...56%
+	...57%
+	...58%
+	...59%
+	...60%
+	...61%
+	...62%
+	...63%
+	...64%
+	...65%
+	...66%
+	...67%
+	...68%
+	...69%
+	...70%
+	...71%
+	...72%
+	...73%
+	...74%
+	...75%
+	...76%
+	...77%
+	...78%
+	...79%
+	...80%
+	...81%
+	...82%
+	...83%
+	...84%
+	...85%
+	...86%
+	...87%
+	...88%
+	...89%
+	...90%
+	...91%
+	...92%
+	...93%
+	...94%
+	...95%
+	...96%
+	...97%
+	...98%
+	...99%
+	...100%
+Finishing packs extraction...
+No extra files need to be downloaded
+Installing bundle(s) files...
+	...0%
+	...1%
+	...2%
+	...3%
+	...4%
+	...5%
+	...6%
+	...7%
+	...8%
+	...9%
+	...10%
+	...11%
+	...12%
+	...13%
+	...14%
+	...15%
+	...16%
+	...17%
+	...18%
+	...19%
+	...20%
+	...21%
+	...22%
+	...23%
+	...24%
+	...25%
+	...26%
+	...27%
+	...28%
+	...29%
+	...30%
+	...31%
+	...32%
+	...33%
+	...34%
+	...35%
+	...36%
+	...37%
+	...38%
+	...39%
+	...40%
+	...41%
+	...42%
+	...43%
+	...44%
+	...45%
+	...46%
+	...47%
+	...48%
+	...49%
+	...50%
+	...51%
+	...52%
+	...53%
+	...54%
+	...55%
+	...56%
+	...57%
+	...58%
+	...59%
+	...60%
+	...61%
+	...62%
+	...63%
+	...64%
+	...65%
+	...66%
+	...67%
+	...68%
+	...69%
+	...70%
+	...71%
+	...72%
+	...73%
+	...74%
+	...75%
+	...76%
+	...77%
+	...78%
+	...79%
+	...80%
+	...81%
+	...82%
+	...83%
+	...84%
+	...85%
+	...86%
+	...87%
+	...88%
+	...89%
+	...90%
+	...91%
+	...92%
+	...93%
+	...94%
+	...95%
+	...96%
+	...97%
+	...98%
+	...99%
+	...100%
+Calling post-update helper scripts
+Successfully installed 1 bundle
+Removing intermediate container f0272a2487e1
+ ---> a3d9e23b9309
+Step 5/5 : CMD ["/bin/bash"]
+ ---> Running in 3ce7373757ea
+Removing intermediate container 3ce7373757ea
+ ---> bf276cdaad76
+Successfully built bf276cdaad76
+Successfully tagged sameprolog-emacs:latest
+echo Finished emacs 
+Finished emacs
+echo Building vim 
+Building vim
+m4 -I templates dockerfile.vim.m4 | tee Dockerfile.vim | docker build -t sameprolog-vim -
+Sending build context to Docker daemon  2.048kB
+
+
+Step 1/5 : FROM clearlinux:latest
+ ---> 9a17e4f72fc4
+Step 2/5 : RUN swupd update &&     swupd bundle-add c-basic strace
+ ---> Using cache
+ ---> d85b195809a3
+Step 3/5 : FROM clearlinux:latest
+ ---> 9a17e4f72fc4
+Step 4/5 : RUN swupd bundle-add vim
+ ---> Running in e55925e80e02
+Loading required manifests...
+Downloading packs (61.62 MB) for:
+ - python3-basic
+ - lib-openssl
+ - perl-basic
+ - vim
+	...0%
+	...1%
+	...2%
+	...3%
+	...4%
+	...5%
+	...6%
+	...7%
+	...8%
+	...9%
+	...10%
+	...11%
+	...12%
+	...13%
+	...14%
+	...15%
+	...16%
+	...17%
+	...18%
+	...19%
+	...20%
+	...21%
+	...22%
+	...23%
+	...24%
+	...25%
+	...26%
+	...27%
+	...28%
+	...29%
+	...30%
+	...31%
+	...32%
+	...33%
+	...34%
+	...35%
+	...36%
+	...37%
+	...38%
+	...39%
+	...40%
+	...41%
+	...42%
+	...43%
+	...44%
+	...45%
+	...46%
+	...47%
+	...48%
+	...49%
+	...50%
+	...51%
+	...52%
+	...53%
+	...54%
+	...55%
+	...56%
+	...57%
+	...58%
+	...59%
+	...60%
+	...61%
+	...62%
+	...63%
+	...64%
+	...65%
+	...66%
+	...67%
+	...68%
+	...69%
+	...70%
+	...71%
+	...72%
+	...73%
+	...74%
+	...75%
+	...76%
+	...77%
+	...78%
+	...79%
+	...80%
+	...81%
+	...82%
+	...83%
+	...84%
+	...85%
+	...86%
+	...87%
+	...88%
+	...89%
+	...90%
+	...91%
+	...92%
+	...93%
+	...94%
+	...95%
+	...96%
+	...97%
+	...98%
+	...99%
+	...100%
+Finishing packs extraction...
+No extra files need to be downloaded
+Installing bundle(s) files...
+	...0%
+	...1%
+	...2%
+	...3%
+	...4%
+	...5%
+	...6%
+	...7%
+	...8%
+	...9%
+	...10%
+	...11%
+	...12%
+	...13%
+	...14%
+	...15%
+	...16%
+	...17%
+	...18%
+	...19%
+	...20%
+	...21%
+	...22%
+	...23%
+	...24%
+	...25%
+	...26%
+	...27%
+	...28%
+	...29%
+	...30%
+	...31%
+	...32%
+	...33%
+	...34%
+	...35%
+	...36%
+	...37%
+	...38%
+	...39%
+	...40%
+	...41%
+	...42%
+	...43%
+	...44%
+	...45%
+	...46%
+	...47%
+	...48%
+	...49%
+	...50%
+	...51%
+	...52%
+	...53%
+	...54%
+	...55%
+	...56%
+	...57%
+	...58%
+	...59%
+	...60%
+	...61%
+	...62%
+	...63%
+	...64%
+	...65%
+	...66%
+	...67%
+	...68%
+	...69%
+	...70%
+	...71%
+	...72%
+	...73%
+	...74%
+	...75%
+	...76%
+	...77%
+	...78%
+	...79%
+	...80%
+	...81%
+	...82%
+	...83%
+	...84%
+	...85%
+	...86%
+	...87%
+	...88%
+	...89%
+	...90%
+	...91%
+	...92%
+	...93%
+	...94%
+	...95%
+	...96%
+	...97%
+	...98%
+	...99%
+	...100%
+Calling post-update helper scripts
+Successfully installed 1 bundle
+Removing intermediate container e55925e80e02
+ ---> f6a5cbff42d1
+Step 5/5 : CMD ["/bin/bash"]
+ ---> Running in 3a86615fca39
+Removing intermediate container 3a86615fca39
+ ---> bb5afba08ef9
+Successfully built bb5afba08ef9
+Successfully tagged sameprolog-vim:latest
+echo Finished vim 
+Finished vim
